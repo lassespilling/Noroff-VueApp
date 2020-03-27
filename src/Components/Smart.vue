@@ -7,7 +7,7 @@
                 <ul>
                     <li
                         class="flex-grow-1"
-                        v-for="(ingredient, i) in item.ingredients.split(' ')"
+                        v-for="(ingredient, i) in item.ingredients.split(',')"
                         :tag="ingredient"
                         v-bind:key="i"
                     >{{ ingredient }}</li>
