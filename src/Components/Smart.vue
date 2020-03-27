@@ -2,30 +2,22 @@
     <div>
         <div class="row justify-content-center text-left">
             <div v-for="(item, i) in info" v-bind:key="i" class="m-2 p-0 item">
-                <img
-                    :src="item.thumbnail"
-                    height="50px"
-                    alt="item.title"
-                    class="w-100"
-                />
+                <img :src="item.thumbnail" height="50px" alt="item.title" class="w-100" />
                 <h2 class="p-3 h4">{{ item.title }}</h2>
                 <ul>
                     <li
                         class="flex-grow-1"
-                        v-for="ingredient in item.ingredients.split(' ')"
+                        v-for="(ingredient, i) in item.ingredients.split(' ')"
                         :tag="ingredient"
-                        v-bind:key="ingredient"
-                    >
-                        {{ ingredient }}
-                    </li>
+                        v-bind:key="i"
+                    >{{ ingredient }}</li>
                 </ul>
 
                 <a
                     :href="item.href"
                     class="btn mx-3 mb-3"
                     :style="'background:' + btnbg"
-                    >View recipe ➞</a
-                >
+                >View recipe ➞</a>
             </div>
         </div>
     </div>
